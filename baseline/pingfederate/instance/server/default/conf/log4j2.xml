@@ -1181,11 +1181,11 @@
         <!-- Limit categories -->
         <!-- ================ -->
 
-        <Logger name="org.apache.http.wire" level="INFO" />
+        <Logger name="org.apache.http.wire" level="DEBUG" />
         <Logger name="com.pingidentity.pf.email" level="INFO" />
         <Logger name="org.sourceid" level="DEBUG" />
         <Logger name="org.sourceid.saml20.domain.mgmt.impl.DataDeployer" level="DEBUG" />
-        <Logger name="org.sourceid.saml20.util.SystemUtil" level="INFO" additivity="false">
+        <Logger name="org.sourceid.saml20.util.SystemUtil" level="DEBUG" additivity="false">
             <AppenderRef ref="CONSOLE" />
             <AppenderRef ref="FILE" />
         </Logger>
@@ -1194,17 +1194,17 @@
             WARNING: This is intended for debugging purposes only. Sensitive information, such as passwords, may be
             logged with this Logger.
         -->
-        <!--
+        
         <Logger name="org.sourceid.servlet.filter.HttpRequestHeaderFilter" level="TRACE" />
-        -->
+        
         <!--
             Uncomment HttpRequestParameterFilter logger for logging of all HTTP request parameter values
             WARNING: This is intended for debugging purposes only. Sensitive information, such as passwords, may be
             logged with this Logger.
         -->
-        <!--
+        
         <Logger name="org.sourceid.servlet.filter.HttpRequestParameterFilter" level="TRACE" />
-        -->
+        
         <!--
             Uncomment OutMessageContext logger to provide more information,
             This may add PII information to logs.
@@ -1217,8 +1217,8 @@
         <!-- Adjust the priority value to DEBUG to get additional logging to help troubleshoot XML Signature problems -->
         <Logger name="org.sourceid.common.dsig" level="INFO" />
         <Logger name="org.sourceid.saml20.domain.mgmt.impl.PluginSupport" level="INFO" />
-        <Logger name="com.pingidentity" level="INFO" />
-        <Logger name="com.pingidentity.common.util.ErrorHandler" level="INFO" additivity="false">
+        <Logger name="com.pingidentity" level="DEBUG" />
+        <Logger name="com.pingidentity.common.util.ErrorHandler" level="DEBUG" additivity="false">
             <AppenderRef ref="CONSOLE" />
             <AppenderRef ref="FILE" />
         </Logger>
@@ -1474,6 +1474,7 @@
 
         <Logger name="com.pingidentity.appserver.jetty.PingFederateInit" level="ERROR" additivity="false" includeLocation="false">
             <AppenderRef ref="CONSOLE" />
+            <AppenderRef ref="FILE" />
         </Logger>
 
         <Logger name="org.pingidentity.RunPF" level="ERROR" additivity="false" includeLocation="false">
@@ -1491,7 +1492,7 @@
             For database logging, comment the <AsyncRoot> block and uncomment the <Root> block.
         -->
         <AsyncRoot level="INFO" includeLocation="false">
-            <!-- <AppenderRef ref="CONSOLE" /> -->
+            <AppenderRef ref="CONSOLE" />
             <AppenderRef ref="FILE" />
         </AsyncRoot>
 
